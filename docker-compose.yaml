@@ -8,6 +8,11 @@ services:
     restart: unless-stopped
     networks:
       - public-web
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.pom-moe.rule=Host(`pom-moe.dennisadam.de`)"
+      - "traefik.http.routers.pom-moe.tls=true"
+
 
 networks:
   public-web:
