@@ -1,0 +1,15 @@
+version: "3.7"
+
+services:
+  pom-moe:
+    container_name: pom-moe
+    build: .
+    image: piket95/pom-moe
+    restart: unless-stopped
+    networks:
+      - public-web
+
+networks:
+  public-web:
+    name: docker_default
+    external: true
